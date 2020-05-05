@@ -16,7 +16,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: vnkvX42UeMmuBusEVcqjxmIsxuH8fQ0rJTbKo5OuRzaNeZuUJ99IeUSBSTev1SL7
-  artifact: /\/build\/stage\/.*\.gz/            # upload all NuGet packages to release assets
+  artifact: /\.\/build\/stage\/.*\.gz/            # upload all NuGet packages to release assets
   draft: false
   prerelease: true
   on:
