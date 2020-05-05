@@ -47,9 +47,6 @@ matrix:
       env: MUSL=true NODE_NVM_VERSION="11.2.0"
     - os: linux
       env: ELECTRON_VERSION="2.0.7" ELECTRON_MOCHA=true
-  global:
-    - secure: UwtG8rFAF8+tDmifVecoT9vm1ya/3iTK+pYSs0Qolo6Th6oMWv1pK/yE32iK4J0P4mRCE0OEV1FjhYpBp1zug6GaREV7cCaIexqY5m02AXsQ7jmNVRe4bQedaLYkJQP6xPCx26/Pu1ZHi+x6v8mDyqY9nSdlP7CL23iVobuw53Am/ZR5BK4bKB19HJiX2N1gqHHhzV1gFQxZBwxeLm55K7Fu+YbmUrPMMmR42alpiCSSyWJPhijDrVWdCA7ess73Hfu9vrrSEpRHgG+d2LXErTy1InRibmxwhEELgZMUmADMIyLk5YceoRNmESsWOfXUOrQGN5qjnomdd9+y7u2jXxaSnAPAlEcbZsMX7emVdsUlzacSEi/pMEVtSAgF6vCHFpkTMr+XtKUwJwu+c76kxAdfOSu1pY4Z6QsDvvfOF1OhBYiLM4ph7QfqEK0eS6lh6vJF6F1iwZ4BfEYcu7a8ANqv6d4odqLnGtMNJoJ7ijbDkxVoRP+pmh4tBNXMd23bpECR3U8iuWHPkWiMmXtIrgy7WzRqxomCrtuxO/ZetLm0ctsihsN7Z1Sgb3/hJiGO7oEZZBSzdF02/Q1umPz6xvqbvQJp+VA/CqSq0+fx+DGacxOOQar87N268d0Y62q1i02eyvzBgY8X9awN4EvIp16yRCJCNart7T4dIkurSwE=
-    - secure: OFo+Aqvq/FJLey1wXN8IrRw42aoccTIX90d9DFrpIieJ436WDpBdl3QgzPuCrJiBW9VxCdgzF1xvkFm1+VwzqvqXgAZfTJeJ2AhDjltzHtN+QzJx7SwQcsMAEbSgdLbboGJuyf1yeCs5x95792U+CXm3xy+zLkKw9XO9682WaO6uAp6mVX0wD7Z6u8qLbwMI6YXcY99rptiEtQ4TzKWHQI4m5dSHkCISmNGtBOuOZEF8v3FJ8TzEmjEJ1FNRrjAcwFcTgIwoHudmrs/GGaWBpwyq24XmBG8cavDeKaezmL80vBbGJaOR9IdVwYKNaeslNZBCxGoq3Cy1ReB2cECPw2yhFUktlHqr4SzzCt8JgMgtH8dLajQTdpznJssJesGfz4kwBu+IKGxrIqkh6/YEtYJFEUaaVBjyt7uyuXefZpoz19E63ZzqtrtHRFhdru4aEaUk6CibfljMMaLnxnvdkhQljz5SAhgh55aAUCejh1mgFIR5O3W4AD/3zrIL6HDOLEbYmFbDAsYIoPqp5g+9oiJ6sPyO75wtlFo4ciaw5K7o1y4NTh9BCB7j0P3FYAMqf2Z/wT2kU6W0MKFyo6AmOL4w7uwT/OAgYbWn1hgG2toAtatFrXnUu5CQTBwxel4uTiLkJIa1Zoy53BJxzDUVGgDvs/+sjV3lIr5J09B2kmA=
 before_install:
   - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
   - if [[ $ELECTRON_VERSION ]]; then
@@ -102,3 +99,12 @@ script:
     ./node_modules/.bin/node-pre-gyp install $EXTRA_NODE_PRE_GYP_FLAGS;
     npm test;
     fi
+deploy:
+ - provider: releases
+   file: build/stage/*
+   token:
+    secure: GxigeheJvaQpZYX2wa/YKBvld9b1EUnBQUCh0shYQSS0sQWVoAVzB58C6E2JsUjz8QmMAnElClMb1E4SkC8j2zxULO5FiC6SsoW+Pr9kCnZjF5bF3N7DyCl0hNt18ytzZe4VggGayxC6wNyGfqAiVA2XiLtpZVAEE76A0yJ7UoE7xzKnXv9fn5+IyrpPJCS6q63MyuVpXK8GC5wyj40t2thuNkByHDVQmyonbctNKeYQ7H5y7A62pT0gkZih3WFl3AAPTDHmZ3MYE2OHgnPpF0hJBDmZv7l9miqQroxyvpALmBJsfT7blvV7h/8T8FCafVq1e+2YNq5+SOzJ+3HVRBvJcMKtfxgtUiLXIRoL6/gP3e2QCrCcn4f0qZFiQcie7EvarK0cQyd7IEUmSYuPfPGbeY4KXjuHHmjYBHC3P1klXQ4iCvcssOVUze85z6NUo64azIAfNzYWEuDtbXkZAxw+FsvTHM7d2EP8ng9PWYvtRslWFsadEyIFCXXVmy4b8UdGJCvhQagbhU3FlJ81U6lz4+ciqoemYMMxlSA4Wkdzif+kar4vMskYBhpsg4PjSSmDjDEAr7WBpRJIHjtpnmOaTtFzOYEscw3bXKN1O41JxTot4RDISMBTjtYeCTlskvUzvdMHvgDOJ8rOMWEhn8v8m0lPDheOSYxy9dF56Ho=
+   skip_cleanup: true
+   edge: true
+   on:
+     tags: true
