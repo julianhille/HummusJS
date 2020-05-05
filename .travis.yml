@@ -101,6 +101,13 @@ script:
     fi
 before_deploy:
   - npm run package --verbose
+  - echo $CWD
+  - echo $TRAVIS_BUILD_DIR/build/stage/*.gz
+  - ls -lah $TRAVIS_BUILD_DIR/build/stage/*.gz
+  - ls -lah build/stage/*.gz
+  - ls -lah build
+  - ls -lah build/stage/
+  - ls -lah
 deploy:
   provider: releases
   api_key:
