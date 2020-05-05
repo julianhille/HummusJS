@@ -15,7 +15,7 @@ deploy:
   description: $(APPVEYOR_REPO_TAG_NAME)
   provider: GitHub
   auth_token:
-    secure: vnkvX42UeMmuBusEVcqjxmIsxuH8fQ0rJTbKo5OuRzaNeZuUJ99IeUSBSTev1SL7
+    secure: l0ICngcMXBN6Zb6Mu+r1CyseqTkMdo/KIJdQkpw7mS/GALPYumZ5FUXKZjSB3l2g
   artifact: /\.\/build\/stage\/.*\.gz/            # upload all NuGet packages to release assets
   draft: false
   prerelease: true
