@@ -102,13 +102,12 @@ script:
     npm test;
     fi
 deploy:
-- provider: releases
-  file: build/stage/*
-  skip_cleanup: true
-  token:
-    secure: "ojjnWNnHGMyONkLTRRFhNmK+8KTFjggC+EtMzLo4Y9wAMm4HPT/4nFK9PeKKJmC48mfIFkowngihrDjsppKUP60lJMsb2huvwOrqm48oBDzDOfmtA9M7Mi0T6swS6M2OWGP93MTxfQo3GNReRL6VH/esAae0YANZAhG7kZ6anypT0pmZUiOOUkwuPasbROFymV9WIQZCXLdKcwsw0Cq0Q65gzQT8U3ECFtOdSiKg/Gp6HMBcmehriAbeWc15qlF86CJAl56B2fBYN987qjYnBPU56HefGEYpHUSBoBWesuDX3K0erU4v9ADQtw+VRl6h+B+KnZW4tx8IpC8okT2T4gLz9OsmpG5gBVfp3EmaHQw8lSGF+ouziNc/i86Euk46XNpCIsNzyLp6cuqsLAkqx/LF27kZiFmHFLmTy3gRAdxkiCyDVlw4y8FkdGgr1nwD61u3riCEySMwyJJBXRW+eEw78iYyvDOFCOHTvBzi7gDCZxb5bb6uvIuz10sd4JL/7J6mPov1Zav4b69xzANaT5tPK3PaUYXWQI1TPKewtsVkx9nbtaFVAt94L/zn47gDaUxqxnfkO2v36Jj5p2MVFXVKo0m5eyD5Pz8qBwEtfjzJPqNCKrQ+St9DeLPLTCRJZD8+y57aEv1/lnwGdxTyTfJVqdGAKXchuvaz6z/WMgg="
-  repo: julianhille/Hummusjs
-  edge: true
+  provider: releases
+  api_key:
+    secure: PR6eMT6UtZrUpR5ygOXmmiMmae7KUf2ndoFaD/SgsvhXS2FQds8DqByi9ElO8cTZ5I7ZHWQOeq2nx/kcdtkmuca5S4J8wPdRgmgfYNWZg7ew4C/qS0e9CawLgk1nbYDZYTxiZoSdXIrnkJNNbuWfNEmmBYe12RcBLnJLWCb+cJPJMK2eVJFlOLJsnZ0xnSQckAfKdxHvUamBpA0CQUuVk6p0cMW70W6rraexpoHM2wMgdLgH9vfhrXdfeFcw0fplxf+yDZLXcTJgwarHV65Ysh53/4a7NL8PB7Ek/sd+DjyYQhU8Zw/UgZ9QIsgviH4GvmnF8NmLSiSUHMqBPvkRsqGZxULvxKVgw3tx0TB0/gSDE8eq9fI9h6SnecrVOWtYy5OqnzDJpdAyv5lVKzPhqql2NBlNt4nNo5XwoDI3xuJ3WCmGCiuCn3Zieznk3iDsjjG7WtPszWRhyTDo0wmJfYReIoKnRJwUqYdZR77UmL7/qQSvrMAk2cUtBBDvUAIbh5pq017oDrrSurcnqTtOaq4mRU/JuyS+APjUp1/JqdZs6IP840hVg8LI9/NiidxOJ0e5RGy9NgM965EgwX1jOt4cHjoB1TsOZpREHNjL0IeB2wuYySUieqtMUqNRmkN0SJ2Gy4Fqodh3+FxETzq8pyz/tuUMocWsjqYi0B5w48Q=
+  file: "./build/stage/*"
   on:
     tags: true
+    repo: julianhille/HummusJS
     branch: feature/github-deployments
+  skip_cleanup: 'true'
