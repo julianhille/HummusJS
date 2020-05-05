@@ -47,6 +47,8 @@ matrix:
       env: MUSL=true NODE_NVM_VERSION="11.2.0"
     - os: linux
       env: ELECTRON_VERSION="2.0.7" ELECTRON_MOCHA=true
+global:
+  secure: DSR125baoeNehJCyNIn7c2ltAXurUKyFtBLxEFiaIiJ/nYGGJBuMty0zS0bf0phQuv1HL49KVfSVcdLWK43aU7erITyZBNVfWPwHZE+qr3hrO50Trs9xCDi4w2Pc4hdUxGYNJXcKP8NWQSzF2AL/K6y0MNpBJyn/feg/HAYFgq++NM/Zj/nmF9G83+gQY0F+1FnaEeAToRFT+fx2nyIrSzmNSm4dxmYPmBWElBw+OVkem3IIDdfc6mQKroidKV87BVUEKg8InAeCsbFuW++Jo7tZKNTPi9QekjnwPR8KKvxzTuNPSY6qMKQUuYav8JcyYutjNfO02LKX8bF5dfkRDbuk4Oi//gVkc99zvZPCNdR8v+wMocwALlnv5IJnXB246tmbpCv+cJP/7CEgVvQraRcp/i+9GA64nWuOd6MjwM7iHYfSNf9NeUDSl1YLNYHRVJkWx2vtj6WHCWfQbg/UDFbbUkeXLIzlkHSnY5p3Ti2pJ8Wkfzjbogj2WShOQiqk8BFEudv+EGpzh3V7n/zbcvbuA/6VppRWck6boHo6RE4s4WqtrSTz1gw6lJJehXcISe3MdFQQ7Twj8fOCtWcHRmZtcBbor9PwoaGBjlTRPt6fcXM1WeQcvf6gme/ro/a8tVV43w6UnKgG9gjSMh87JYQNSJDA6RahG9zy13N+k4w=
 before_install:
   - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
   - if [[ $ELECTRON_VERSION ]]; then
@@ -103,8 +105,11 @@ deploy:
  - provider: releases
    file: build/stage/*
    token:
-    secure: DSR125baoeNehJCyNIn7c2ltAXurUKyFtBLxEFiaIiJ/nYGGJBuMty0zS0bf0phQuv1HL49KVfSVcdLWK43aU7erITyZBNVfWPwHZE+qr3hrO50Trs9xCDi4w2Pc4hdUxGYNJXcKP8NWQSzF2AL/K6y0MNpBJyn/feg/HAYFgq++NM/Zj/nmF9G83+gQY0F+1FnaEeAToRFT+fx2nyIrSzmNSm4dxmYPmBWElBw+OVkem3IIDdfc6mQKroidKV87BVUEKg8InAeCsbFuW++Jo7tZKNTPi9QekjnwPR8KKvxzTuNPSY6qMKQUuYav8JcyYutjNfO02LKX8bF5dfkRDbuk4Oi//gVkc99zvZPCNdR8v+wMocwALlnv5IJnXB246tmbpCv+cJP/7CEgVvQraRcp/i+9GA64nWuOd6MjwM7iHYfSNf9NeUDSl1YLNYHRVJkWx2vtj6WHCWfQbg/UDFbbUkeXLIzlkHSnY5p3Ti2pJ8Wkfzjbogj2WShOQiqk8BFEudv+EGpzh3V7n/zbcvbuA/6VppRWck6boHo6RE4s4WqtrSTz1gw6lJJehXcISe3MdFQQ7Twj8fOCtWcHRmZtcBbor9PwoaGBjlTRPt6fcXM1WeQcvf6gme/ro/a8tVV43w6UnKgG9gjSMh87JYQNSJDA6RahG9zy13N+k4w=
+     secure: DSR125baoeNehJCyNIn7c2ltAXurUKyFtBLxEFiaIiJ/nYGGJBuMty0zS0bf0phQuv1HL49KVfSVcdLWK43aU7erITyZBNVfWPwHZE+qr3hrO50Trs9xCDi4w2Pc4hdUxGYNJXcKP8NWQSzF2AL/K6y0MNpBJyn/feg/HAYFgq++NM/Zj/nmF9G83+gQY0F+1FnaEeAToRFT+fx2nyIrSzmNSm4dxmYPmBWElBw+OVkem3IIDdfc6mQKroidKV87BVUEKg8InAeCsbFuW++Jo7tZKNTPi9QekjnwPR8KKvxzTuNPSY6qMKQUuYav8JcyYutjNfO02LKX8bF5dfkRDbuk4Oi//gVkc99zvZPCNdR8v+wMocwALlnv5IJnXB246tmbpCv+cJP/7CEgVvQraRcp/i+9GA64nWuOd6MjwM7iHYfSNf9NeUDSl1YLNYHRVJkWx2vtj6WHCWfQbg/UDFbbUkeXLIzlkHSnY5p3Ti2pJ8Wkfzjbogj2WShOQiqk8BFEudv+EGpzh3V7n/zbcvbuA/6VppRWck6boHo6RE4s4WqtrSTz1gw6lJJehXcISe3MdFQQ7Twj8fOCtWcHRmZtcBbor9PwoaGBjlTRPt6fcXM1WeQcvf6gme/ro/a8tVV43w6UnKgG9gjSMh87JYQNSJDA6RahG9zy13N+k4w=
+   api_key:
+     secure: DSR125baoeNehJCyNIn7c2ltAXurUKyFtBLxEFiaIiJ/nYGGJBuMty0zS0bf0phQuv1HL49KVfSVcdLWK43aU7erITyZBNVfWPwHZE+qr3hrO50Trs9xCDi4w2Pc4hdUxGYNJXcKP8NWQSzF2AL/K6y0MNpBJyn/feg/HAYFgq++NM/Zj/nmF9G83+gQY0F+1FnaEeAToRFT+fx2nyIrSzmNSm4dxmYPmBWElBw+OVkem3IIDdfc6mQKroidKV87BVUEKg8InAeCsbFuW++Jo7tZKNTPi9QekjnwPR8KKvxzTuNPSY6qMKQUuYav8JcyYutjNfO02LKX8bF5dfkRDbuk4Oi//gVkc99zvZPCNdR8v+wMocwALlnv5IJnXB246tmbpCv+cJP/7CEgVvQraRcp/i+9GA64nWuOd6MjwM7iHYfSNf9NeUDSl1YLNYHRVJkWx2vtj6WHCWfQbg/UDFbbUkeXLIzlkHSnY5p3Ti2pJ8Wkfzjbogj2WShOQiqk8BFEudv+EGpzh3V7n/zbcvbuA/6VppRWck6boHo6RE4s4WqtrSTz1gw6lJJehXcISe3MdFQQ7Twj8fOCtWcHRmZtcBbor9PwoaGBjlTRPt6fcXM1WeQcvf6gme/ro/a8tVV43w6UnKgG9gjSMh87JYQNSJDA6RahG9zy13N+k4w=
    skip_cleanup: true
    edge: true
    on:
      tags: true
+     branch: feature/github-deployments
