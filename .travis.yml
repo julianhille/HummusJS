@@ -105,7 +105,7 @@ deploy:
   provider: releases
   api_key:
     secure: PR6eMT6UtZrUpR5ygOXmmiMmae7KUf2ndoFaD/SgsvhXS2FQds8DqByi9ElO8cTZ5I7ZHWQOeq2nx/kcdtkmuca5S4J8wPdRgmgfYNWZg7ew4C/qS0e9CawLgk1nbYDZYTxiZoSdXIrnkJNNbuWfNEmmBYe12RcBLnJLWCb+cJPJMK2eVJFlOLJsnZ0xnSQckAfKdxHvUamBpA0CQUuVk6p0cMW70W6rraexpoHM2wMgdLgH9vfhrXdfeFcw0fplxf+yDZLXcTJgwarHV65Ysh53/4a7NL8PB7Ek/sd+DjyYQhU8Zw/UgZ9QIsgviH4GvmnF8NmLSiSUHMqBPvkRsqGZxULvxKVgw3tx0TB0/gSDE8eq9fI9h6SnecrVOWtYy5OqnzDJpdAyv5lVKzPhqql2NBlNt4nNo5XwoDI3xuJ3WCmGCiuCn3Zieznk3iDsjjG7WtPszWRhyTDo0wmJfYReIoKnRJwUqYdZR77UmL7/qQSvrMAk2cUtBBDvUAIbh5pq017oDrrSurcnqTtOaq4mRU/JuyS+APjUp1/JqdZs6IP840hVg8LI9/NiidxOJ0e5RGy9NgM965EgwX1jOt4cHjoB1TsOZpREHNjL0IeB2wuYySUieqtMUqNRmkN0SJ2Gy4Fqodh3+FxETzq8pyz/tuUMocWsjqYi0B5w48Q=
-  file: "./build/stage/*"
+  file: "$TRAVIS_BUILD_DIR/build/stage/*"
   on:
     tags: true
     repo: julianhille/HummusJS
