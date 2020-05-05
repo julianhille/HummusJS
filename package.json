@@ -8,7 +8,8 @@
   "main": "./hummus.js",
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build $EXTRA_NODE_PRE_GYP_FLAGS",
-    "test": "mocha -R tap ./tests/*.js --timeout 15000"
+    "test": "mocha -R tap ./tests/*.js --timeout 15000",
+    "package": "node-pre-gyp package"
   },
   "repository": {
     "type": "git",
@@ -43,7 +44,6 @@
   "binary": {
     "module_name": "hummus",
     "module_path": "./binding",
-
     "remote_path": "./",
     "host": "https://github.com/julianhille/hummusjs/",
     "package_name": "{node_abi}-{platform}-{arch}-{libc}.tar.gz"

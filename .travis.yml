@@ -99,6 +99,8 @@ script:
     ./node_modules/.bin/node-pre-gyp install $EXTRA_NODE_PRE_GYP_FLAGS;
     npm test;
     fi
+before_deploy:
+  - npm run package
 deploy:
   provider: releases
   api_key:
