@@ -9,6 +9,9 @@ platform:
 install:
   - scripts\build-appveyor.bat
 
+artifacts:
+  - path: 'build\stage\*.gz'
+
 build: OFF
 test: OFF
 deploy:
@@ -16,7 +19,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: l0ICngcMXBN6Zb6Mu+r1CyseqTkMdo/KIJdQkpw7mS/GALPYumZ5FUXKZjSB3l2g
-  artifact: /\.\/build\/stage\/.*\.gz/            # upload all NuGet packages to release assets
+  artifact: /.*\.gz/           # upload all NuGet packages to release assets
   draft: false
   prerelease: true
   on:
