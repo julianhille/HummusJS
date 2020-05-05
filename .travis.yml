@@ -100,7 +100,7 @@ script:
     npm test;
     fi
 before_deploy:
-  - npm run package
+  - npm run package --verbose
 deploy:
   provider: releases
   api_key:
