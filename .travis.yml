@@ -105,7 +105,8 @@ deploy:
 - provider: releases
   file: build/stage/*
   skip_cleanup: true
-  token: $GITHUB_TOKEN
+  token:
+    secure: "ojjnWNnHGMyONkLTRRFhNmK+8KTFjggC+EtMzLo4Y9wAMm4HPT/4nFK9PeKKJmC48mfIFkowngihrDjsppKUP60lJMsb2huvwOrqm48oBDzDOfmtA9M7Mi0T6swS6M2OWGP93MTxfQo3GNReRL6VH/esAae0YANZAhG7kZ6anypT0pmZUiOOUkwuPasbROFymV9WIQZCXLdKcwsw0Cq0Q65gzQT8U3ECFtOdSiKg/Gp6HMBcmehriAbeWc15qlF86CJAl56B2fBYN987qjYnBPU56HefGEYpHUSBoBWesuDX3K0erU4v9ADQtw+VRl6h+B+KnZW4tx8IpC8okT2T4gLz9OsmpG5gBVfp3EmaHQw8lSGF+ouziNc/i86Euk46XNpCIsNzyLp6cuqsLAkqx/LF27kZiFmHFLmTy3gRAdxkiCyDVlw4y8FkdGgr1nwD61u3riCEySMwyJJBXRW+eEw78iYyvDOFCOHTvBzi7gDCZxb5bb6uvIuz10sd4JL/7J6mPov1Zav4b69xzANaT5tPK3PaUYXWQI1TPKewtsVkx9nbtaFVAt94L/zn47gDaUxqxnfkO2v36Jj5p2MVFXVKo0m5eyD5Pz8qBwEtfjzJPqNCKrQ+St9DeLPLTCRJZD8+y57aEv1/lnwGdxTyTfJVqdGAKXchuvaz6z/WMgg="
   repo: julianhille/Hummusjs
   edge: true
   on:
